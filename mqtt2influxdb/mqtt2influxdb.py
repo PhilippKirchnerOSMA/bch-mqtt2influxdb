@@ -143,7 +143,8 @@ class Mqtt2InfluxDB:
                     else:
                         logging.debug("no timestamp in MQTT message..")
                 except Exception:
-                    logging.warn("some error while trying to read time from mqtt message.... let's ignore, and use the current timestamp")
+                    pass
+                    #logging.warn("some error while trying to read time from mqtt message.... let's ignore, and use the current timestamp")
 
                 record = {'measurement': measurement,
                           'time': timestamp,
